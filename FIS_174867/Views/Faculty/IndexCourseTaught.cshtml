@@ -1,0 +1,61 @@
+﻿@model IEnumerable<FIS_174867.Models.CoursesTaught>
+
+@{
+    ViewBag.Title = "IndexCourseTaught";
+    Layout = "~/Views/Shared/facultylayout.cshtml";
+}
+
+<h2>Display CourseTaught</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateCourseTaught")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Faculty.FirstName)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Cours.CourseName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Subject.SubjectName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstDateTaught)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.Subject.SubjectName)
+        </th>*@
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Faculty.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cours.CourseName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Subject.SubjectName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstDateTaught)
+        </td>
+
+
+        @*<td>
+            @Html.DisplayFor(modelItem => item.Subject.SubjectName)
+        </td>*@
+        <td>
+            @*@Html.ActionLink("Edit", "Edit", new { id = item.CourseID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.CourseID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.CourseID })*@
+        </td>
+    </tr>
+}
+
+</table>

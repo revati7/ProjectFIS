@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/Studentlayout.cshtml";
+}
+
+<h2>Home</h2>
+
+@using (Html.BeginForm())
+{
+    <table align="center">
+        <tr>
+            <td colspan="2" align="center"><h2>Faculty Management System</h2></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center"><h2>Welcome Student</h2></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                @*@Html.ActionLink("Login", "Login", "Home")*@
+                <a href="@Url.Action("Publicationsbyarticlename", "Student")" title="Edit">
+                    <img src='../../images/search.png' height="60px" , width="60px" />
+                </a>
+                @Html.ActionLink("Search Publications", "Publicationsbyarticlename", "Student")
+            </td>
+        </tr>
+    </table>
+}

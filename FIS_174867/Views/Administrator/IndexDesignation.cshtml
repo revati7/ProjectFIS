@@ -1,0 +1,40 @@
+﻿@model IEnumerable<FIS_174867.Models.Designation>
+
+@{
+    ViewBag.Title = "IndexDesignation";
+    Layout = "~/Views/Shared/Adminlayout.cshtml";
+}
+
+<h2>Display Designation</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateDesignation")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DesignationID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DesignationName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DesignationID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DesignationName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditDesignation", new { id = item.DesignationID }) |
+
+            @Html.ActionLink("Delete", "DeleteDesignation", new { id = item.DesignationID })
+        </td>
+    </tr>
+}
+
+</table>

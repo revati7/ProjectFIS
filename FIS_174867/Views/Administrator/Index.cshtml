@@ -1,0 +1,56 @@
+﻿@model IEnumerable<FIS_174867.Models.User>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Adminlayout.cshtml";
+}
+
+<h2>Index</h2>
+
+@using (Html.BeginForm())
+{
+    <h3>
+        <input type="text" name="div" />
+        <input type="submit" value="Filter With UserName" class="btn btn-info" />
+    </h3>
+}
+<p>
+    @Html.ActionLink("Create New", "CreateFacultyUser")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserRole)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserRole)
+            </td>
+
+            <td>
+                @Html.ActionLink("Edit", "EditFacultyUser", new { id = item.UsersID }) |
+               
+                @Html.ActionLink("Delete", "DeleteFacultyUser", new { id = item.UsersID })
+            </td>
+        </tr>
+    }
+
+</table>

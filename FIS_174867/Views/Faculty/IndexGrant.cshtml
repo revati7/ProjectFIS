@@ -1,0 +1,48 @@
+﻿@model IEnumerable<FIS_174867.Models.Grant>
+
+@{
+    ViewBag.Title = "IndexGrant";
+    Layout = "~/Views/Shared/facultylayout.cshtml";
+}
+
+<h2>Display Grant</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateGrant")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Faculty.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GrantTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GrantDescription)
+        </th>
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Faculty.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GrantTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GrantDescription)
+        </td>
+
+        <td>
+            @*@Html.ActionLink("Edit", "Edit", new { id=item.GrantID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.GrantID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.GrantID })*@
+        </td>
+    </tr>
+}
+
+</table>

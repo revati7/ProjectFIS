@@ -1,0 +1,72 @@
+﻿@model IEnumerable<FIS_174867.Models.WorkHistory>
+
+@{
+    ViewBag.Title = "IndexWorkHistory";
+    Layout = "~/Views/Shared/facultylayout.cshtml";
+}
+
+<h2>Display WorkHistory</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateWorkHistory")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Faculty.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Organization)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JobTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JobBeginDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JobEndDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JobResponsibilities)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JobType)
+        </th>
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Faculty.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Organization)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JobTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JobBeginDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JobEndDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JobResponsibilities)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JobType)
+        </td>
+
+        @*<td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.WorkHistoryID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.WorkHistoryID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.WorkHistoryID })
+        </td>*@
+    </tr>
+}
+
+</table>

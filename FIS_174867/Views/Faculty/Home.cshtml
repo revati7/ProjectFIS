@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/facultylayout.cshtml";
+}
+
+<h2>Home</h2>
+@using (Html.BeginForm())
+{
+
+    <table align="center">
+        <tr>
+            <td colspan="2" align="center"><h2>Faculty Management System</h2></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center"><h2>Welcome</h2></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <a href="@Url.Action("CreatePublication", "Faculty")" title="Edit">
+                    <img src='../../images/publicationfaculty.jpg' height="120px" , width="140px" />
+                </a>
+                @Html.ActionLink("Publication", "CreatePublication", "Faculty")<br />
+
+                <a href="@Url.Action("PersonalInfo", "Faculty")" title="Edit">
+                    <img src='../../images/personalinfo.png' height="80px" , width="80px" />
+                </a>
+                @Html.ActionLink("Personal Information", "PersonalInfo", "Faculty")<br />
+                <br /><br />
+
+                <a href="@Url.Action("CreateWorkHistory", "Faculty")" title="Edit">
+                    <img src='../../images/work.png' height="55px" , width="55px" />
+                </a>
+                @Html.ActionLink("Work History", "CreateWorkHistory", "Faculty")<br /><br />
+
+                <a href="@Url.Action("CreateCourseTaught", "Faculty")" title="Edit">
+                    <img src='../../images/coursetaught.png' height="80px" , width="80px" />
+                </a>
+                @Html.ActionLink("Course Taught", "CreateCourseTaught", "Faculty")<br /><br />
+
+                <a href="@Url.Action("CreateGrant", "Faculty")" title="Edit">
+                    <img src='../../images/grants.jpg' height="40px" , width="100px" />
+                </a>
+                @Html.ActionLink("Course Grants", "CreateGrant", "Faculty")<br />
+
+            </td>
+        </tr>
+    </table>
+}
+

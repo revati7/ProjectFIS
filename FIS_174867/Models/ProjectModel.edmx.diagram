@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9b7b7ed9dde145e18a0df92154262fb3" Name="Diagram1">
+        <EntityTypeShape EntityType="ProjectModel.Cours" Width="1.5" PointX="2.25" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectModel.CoursesTaught" Width="1.5" PointX="7.25" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectModel.CourseSubject" Width="1.5" PointX="5.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectModel.Degree" Width="1.5" PointX="8.125" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectModel.Department" Width="1.5" PointX="0.5" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectModel.Designation" Width="1.5" PointX="0.75" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectModel.Faculty" Width="1.5" PointX="3" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectModel.Grant" Width="1.5" PointX="7.25" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectModel.Publication" Width="1.5" PointX="6.125" PointY="18.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectModel.Subject" Width="1.5" PointX="1.375" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectModel.User" Width="1.5" PointX="0.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectModel.WorkHistory" Width="1.5" PointX="7.75" PointY="22" IsExpanded="true" />
+        <AssociationConnector Association="ProjectModel.FK__Courses__DeptID__671F4F74" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectModel.FK__CoursesTa__Cours__0B5CAFEA" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectModel.FK__CourseSub__Cours__7E02B4CC" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectModel.FK__CoursesTa__Facul__0C50D423" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectModel.FK__CoursesTa__Subje__0D44F85C" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectModel.FK__CourseSub__Subje__7EF6D905" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectModel.FK__Degrees__Faculty__10216507" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectModel.FK__Faculty__DeptID__078C1F06" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectModel.FK__Faculty__Designa__0880433F" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectModel.FK__Faculty__Faculty__0697FACD" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectModel.FK__Grants__FacultyI__1A9EF37A" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectModel.FK__Publicati__Facul__15DA3E5D" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectModel.FK__WorkHisto__Facul__12FDD1B2" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

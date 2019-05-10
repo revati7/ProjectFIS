@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/Adminlayout.cshtml";
+}
+
+<h2>Home</h2>
+
+@using (Html.BeginForm())
+{
+    <table align="center">
+        <tr>
+            <td colspan="2" align="center"><h2>Faculty Management System</h2></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center"><h2>Welcome Admin</h2></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                @*@Html.ActionLink("Login", "Login", "Home")*@
+                <a href="@Url.Action("CreateFacultyUser", "Administrator")" title="Edit">
+                    <img src='../../images/user.jpg' height="60px" , width="60px" />
+                </a>
+                @Html.ActionLink("Create User", "CreateFacultyUser", "Administrator")<br /><br />
+
+                <a href="@Url.Action("CreateDepartment", "Administrator")" title="Edit">
+                    <img src='../../images/departments.jpg' height="60px" , width="60px" />
+                </a>
+                @Html.ActionLink("Create Department", "CreateDepartment", "Administrator")<br /><br />
+
+                <a href="@Url.Action("CreateDesignation", "Administrator")" title="Edit">
+                    <img src='../../images/designation.png' height="60px" , width="60px" />
+                </a>
+                @Html.ActionLink("Create Designation", "CreateDesignation", "Administrator")<br /><br />
+
+                <a href="@Url.Action("IndexFacultyinfo", "Administrator")" title="Edit">
+                    <img src='../../images/personalinfo.png' height="60px" , width="60px" />
+                </a>
+                @Html.ActionLink("Display details of Personal Info", "IndexFacultyinfo", "Administrator")<br /><br />
+
+                <a href="@Url.Action("IndexChangeWorkHistory", "Administrator")" title="Edit">
+                    <img src='../../images/work.png' height="50px" , width="50px" />
+                </a>
+                @Html.ActionLink("Edit details of Job Info", "IndexChangeWorkHistory", "Administrator")<br />
+
+                <a href="@Url.Action("IndexCours", "Administrator")" title="Edit">
+                    <img src='../../images/coursetaught.png' height="70px" , width="70px" />
+                </a>
+                @Html.ActionLink("Create Courses", "IndexCours", "Administrator")<br /><br />
+
+                <a href="@Url.Action("CreateSubject", "Administrator")" title="Edit">
+                    <img src='../../images/subject.jpg' height="70px" , width="70px" />
+                </a>
+                @Html.ActionLink("Create Subjects", "CreateSubject", "Administrator")<br />
+            </td>
+        </tr>
+    </table>
+}

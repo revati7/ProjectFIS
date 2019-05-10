@@ -1,0 +1,80 @@
+﻿@model IEnumerable<FIS_174867.Models.WorkHistory>
+
+@{
+    ViewBag.Title = "IndexChangeWorkHistory";
+    Layout = "~/Views/Shared/Adminlayout.cshtml";
+}
+
+<h2> Display WorkHistory</h2>
+
+@using (Html.BeginForm())
+{
+    <h3>
+        <input type="text" name="div" />
+        <input type="submit" value="Filter With FacultyID" class="btn btn-info" />
+    </h3>
+}
+@*<p>
+        @Html.ActionLink("Create New", "Create")
+    </p>*@
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Faculty.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Organization)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JobTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JobBeginDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JobEndDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JobResponsibilities)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JobType)
+        </th>
+        
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Faculty.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Organization)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JobTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JobBeginDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JobEndDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JobResponsibilities)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JobType)
+        </td>
+
+        <td>
+            @Html.ActionLink("Edit", "EditWorkHistory", new { id = item.WorkHistoryID }) 
+           
+            @*@Html.ActionLink("Delete", "Delete", new { id = item.WorkHistoryID })*@
+        </td>
+    </tr>
+    }
+
+</table>

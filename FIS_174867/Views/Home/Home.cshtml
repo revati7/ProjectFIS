@@ -1,0 +1,30 @@
+﻿@model FIS_174867.Models.User
+
+@{
+    ViewBag.Title = "Home";
+}
+
+@*<h2>Home</h2>*@
+<h1 align="center">Faculty Management System</h1>
+@using (Html.BeginForm())
+{
+    <table align="center">
+        @*<tr>
+            <td colspan="2" align="center"><h1>Faculty Management System</h1></td>
+        </tr>*@
+        <tr><img src="~/images/FIS1.jpeg" height="250px" width="1150px" /></tr>
+        <tr>
+            <td colspan="2" align="center"><h3>Kindly Login to Proceed</h3></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <a href="@Url.Action("Login", "Home")" title="Edit">
+                    <img src='../../images/loginlogo.png' height="60px", width="130px" />
+                </a>
+                @*@Html.ActionLink("Login", "Login", "Home")*@
+                @*@Html.ActionLink("Search Publications", "Publicationsbyarticlename", "Home")*@
+            </td>
+        </tr>
+    </table>
+}
+

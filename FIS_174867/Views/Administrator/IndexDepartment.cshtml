@@ -1,0 +1,48 @@
+﻿@model IEnumerable<FIS_174867.Models.Department>
+
+@{
+    ViewBag.Title = "IndexDepartment";
+    Layout = "~/Views/Shared/Adminlayout.cshtml";
+}
+
+<h2>Display Department</h2>
+
+@using (Html.BeginForm())
+{
+    <h3>
+        <input type="text" name="div" />
+        <input type="submit" value="Filter With Department Name" class="btn btn-info" />
+    </h3>
+}
+<p>
+    @Html.ActionLink("Create New", "CreateDepartment")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DeptID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DeptName)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DeptID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DeptName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditDept", new { id = item.DeptID }) |
+
+            @Html.ActionLink("Delete", "DeleteDept", new { id = item.DeptID })
+        </td>
+    </tr>
+    }
+
+</table>

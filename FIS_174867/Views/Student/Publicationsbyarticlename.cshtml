@@ -1,0 +1,78 @@
+﻿@model IEnumerable<FIS_174867.Models.Publication>
+
+@{
+    ViewBag.Title = "Publicationsbyarticlename";
+    Layout = "~/Views/Shared/Studentlayout.cshtml";
+}
+
+<h2>Publications</h2>
+
+@*<p>
+        @Html.ActionLink("Create New", "Create")
+    </p>*@
+@using (Html.BeginForm())
+{
+    <h3>
+        <input type="text" name="div" />
+        <input type="submit" value="Filter With Article Name" class="btn btn-info" />
+    </h3>
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Faculty.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PublicationTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ArticleName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PublisherName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PublicationLocation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CitationDate)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.Faculty.FirstName)
+        </th>*@
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Faculty.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PublicationTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ArticleName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PublisherName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PublicationLocation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CitationDate)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.Faculty.FirstName)
+        </td>*@
+        @*<td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.PublicationID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.PublicationID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.PublicationID })
+        </td>*@
+    </tr>
+    }
+
+</table>
