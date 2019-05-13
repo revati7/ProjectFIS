@@ -11,7 +11,8 @@ namespace FIS_174867.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Faculty
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -25,16 +26,25 @@ namespace FIS_174867.Models
         }
     
         public int FacultyID { get; set; }
-        
+        [Required]
         public string FirstName { get; set; }
+        [Required]
         public string LastName { get; set; }
+        [Required]
         public string Address { get; set; }
+        [Required]
         public string City { get; set; }
+        [Required]
         public string State { get; set; }
+        [Required]
         public Nullable<int> Pincode { get; set; }
+        [Required]
         public string MobileNo { get; set; }
+        [Required]
         public Nullable<System.DateTime> HireDate { get; set; }
+        [Required]
         public string EmailAddress { get; set; }
+        [Required]
         public Nullable<System.DateTime> DateofBirth { get; set; }
         public Nullable<int> DeptID { get; set; }
         public Nullable<int> DesignationID { get; set; }

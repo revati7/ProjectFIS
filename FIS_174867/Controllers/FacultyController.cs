@@ -139,9 +139,11 @@ namespace FIS_174867.Controllers
             if (Session["UserName"] != null)
             {
                 //PublicationID, FacultyID, PublicationTitle, ArticleName, PublisherName, PublicationLocation, CitationDate
+                
                 DataBaseEntities Context = new DataBaseEntities();
-                var p = Context.Publications.Where(x => x.FacultyID == publication.FacultyID).FirstOrDefault();
-                p.PublicationID = publication.PublicationID;
+                int fid = Convert.ToInt32(Session["UserID"]);
+                var p = Context.Publications.Where(x => x.FacultyID == fid && x.PublicationID==publication.PublicationID).FirstOrDefault();
+                //p.PublicationID = publication.PublicationID;
                 p.FacultyID = Convert.ToInt32(Session["UserID"]);
                 p.PublicationTitle = publication.PublicationTitle;
                 p.ArticleName = publication.ArticleName;
@@ -467,6 +469,8 @@ namespace FIS_174867.Controllers
                     }
                     else
                     {
+                        TempData["Subject"] = new SelectList(GetSubjectID(), "Value", "Text");
+                        TempData["Course"] = new SelectList(GetCourseID(), "Value", "Text");
                         return View();
                     }
                     ViewBag.Message = "Successfully Added";

@@ -15,10 +15,12 @@ namespace FIS_174867.Models
 
     public partial class CoursesTaught
     {
+        [Required]
         public int CourseID { get; set; }
         public Nullable<int> FacultyID { get; set; }
+        [Required]
         public Nullable<int> SubjectID { get; set; }
-        
+        [Required]
         public Nullable<System.DateTime> FirstDateTaught { get; set; }
     
         public virtual Cours Cours { get; set; }

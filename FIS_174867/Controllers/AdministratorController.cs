@@ -44,7 +44,8 @@ namespace FIS_174867.Controllers
         {
             if (Session["UserName"] != null)
             {
-                return View(Context.Users.ToList());
+                var data = Context.Users.ToList();
+                return View(data);
             }
             else
             {
@@ -97,21 +98,29 @@ namespace FIS_174867.Controllers
                 try
                 {
                     DataBaseEntities Context = new DataBaseEntities();
-                    if (ModelState.IsValid)
+                    if (u.UserRole != null)
                     {
-                        User user = new User();
+                        if (ModelState.IsValid)
+                        {
+                            User user = new User();
 
-                        user.UserName = u.UserName;
-                        user.Password = u.Password;
-                        user.UserRole = u.UserRole;
+                            user.UserName = u.UserName;
+                            user.Password = u.Password;
+                            user.UserRole = u.UserRole;
 
-                        //Adds an entity in a pending insert state to this System.Data.Linq.Table<TEntity>and parameter is the entity which to be added  
-                        Context.Users.Add(user);
-                        // executes the appropriate commands to implement the changes to the database  
-                        Context.SaveChanges();
+                            //Adds an entity in a pending insert state to this System.Data.Linq.Table<TEntity>and parameter is the entity which to be added  
+                            Context.Users.Add(user);
+                            // executes the appropriate commands to implement the changes to the database  
+                            Context.SaveChanges();
+                        }
+                        else
+                        {
+                            return View();
+                        }
                     }
                     else
                     {
+                        TempData["UserRole"] = "<script>alert('User Role cannot be empty')</script>";
                         return View();
                     }
                     ViewBag.Message = "Successfully Added";
@@ -186,8 +195,12 @@ namespace FIS_174867.Controllers
             {
                 DataBaseEntities Context = new DataBaseEntities();
                 var fu = Context.Users.Where(x => x.UsersID == id).FirstOrDefault();
-                var fac = Context.Faculties.Where(x => x.FacultyID == id).FirstOrDefault();
-                Context.Faculties.Remove(fac);
+                if (fu.UserRole=="Faculty") {
+                    var fac = Context.Faculties.Where(x => x.FacultyID == id).FirstOrDefault();
+                    Context.Faculties.Remove(fac);
+                }
+               
+               
                 Context.Users.Remove(fu);
                 Context.SaveChanges();
                 return RedirectToAction("Index");
@@ -664,6 +677,7 @@ namespace FIS_174867.Controllers
                     }
                     else
                     {
+                        TempData["Dept"] = new SelectList(GetDeptID(), "Value", "Text");
                         return View();
                     }
                     ViewBag.Message = "Successfully Added";

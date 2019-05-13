@@ -20,7 +20,7 @@ namespace FIS_174867.Models
         public string CourseName { get; set; }
         [Required]
         public string CourseCredits { get; set; }
-
+        [Required]
         public Nullable<int> DeptID { get; set; }
     
         public virtual Department Department { get; set; }

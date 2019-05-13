@@ -4,8 +4,12 @@
     ViewBag.Title = "CreateFacultyUser";
     Layout = "~/Views/Shared/Adminlayout.cshtml";
 }
-
+@if(TempData["UserRole"]!=null)
+{
+    @Html.Raw(TempData["UserRole"]);
+}
 <h2>Create User</h2>
+
 
 @using (Html.BeginForm()) 
 {
@@ -52,7 +56,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </div>
     </div>

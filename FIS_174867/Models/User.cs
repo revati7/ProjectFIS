@@ -15,13 +15,12 @@ namespace FIS_174867.Models
 
     public partial class User
     {
-        //[Required]
         public int UsersID { get; set; }
         [Required]
         public string UserName { get; set; }
         [Required]
         public string Password { get; set; }
-        //[Required]
+        
         public string UserRole { get; set; }
     
         public virtual Faculty Faculty { get; set; }

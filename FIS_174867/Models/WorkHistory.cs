@@ -15,9 +15,7 @@ namespace FIS_174867.Models
 
     public partial class WorkHistory
     {
-        
         public int WorkHistoryID { get; set; }
-        
         public Nullable<int> FacultyID { get; set; }
         [Required]
         public string Organization { get; set; }
