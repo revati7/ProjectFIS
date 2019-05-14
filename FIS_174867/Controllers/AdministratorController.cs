@@ -29,14 +29,7 @@ namespace FIS_174867.Controllers
             {
                 return RedirectToAction("Login", "Home");
             }
-            //string user = Session["UserName"].ToString();
-            //var check = Context.Users.Any(u => u.UserName == user);
-            //if (check)
-            //{
-            //    return View();
-            //}
-            //else
-            //    return RedirectToAction("Login","Home" );
+            
 
         }
 
@@ -50,24 +43,14 @@ namespace FIS_174867.Controllers
             else
             {
                 return RedirectToAction("Login", "Home");
-            }
-            //string user = Session["UserName"].ToString();
-            //var check = Context.Users.Any(u => u.UserName == user);
-            //if (check)
-            //{
-            //    return View(Context.Users.ToList());
-            //}
-            //else
-            //    return RedirectToAction("Index");
-
-
-        }
+            }          
+       }
         [HttpPost]
         public ActionResult Index(string div)
         {
             if (Session["UserName"] != null)
             {
-                DataBaseEntities Context = new DataBaseEntities();
+                
                 var query = from p in Context.Users.ToList()
                             where p.UserName == div
                             select p;
@@ -94,10 +77,10 @@ namespace FIS_174867.Controllers
         {
             if (Session["UserName"] != null)
             {
-                //PublicationID, FacultyID, PublicationTitle, ArticleName, PublisherName, PublicationLocation, CitationDate
+                
                 try
                 {
-                    DataBaseEntities Context = new DataBaseEntities();
+                    
                     if (u.UserRole != null)
                     {
                         if (ModelState.IsValid)
@@ -140,7 +123,7 @@ namespace FIS_174867.Controllers
             if (Session["UserName"] != null)
             {
                 User user = new User();
-                DataBaseEntities Context = new DataBaseEntities();
+                Context = new DataBaseEntities();
                 user = Context.Users.Find(id);
                 return View(user);
             }
@@ -154,7 +137,7 @@ namespace FIS_174867.Controllers
         {
             if (Session["UserName"] != null)
             {
-                DataBaseEntities Context = new DataBaseEntities();
+                
                 var d = Context.Users.Where(x => x.UsersID == user.UsersID).FirstOrDefault();
                 d.UsersID = user.UsersID;
                 d.UserName = user.UserName;
@@ -163,6 +146,9 @@ namespace FIS_174867.Controllers
                 if (TryUpdateModel(d))
                 {
                     Context.SaveChanges();
+
+                    ModelState.Clear();
+
                     return RedirectToAction("Index");
                 }
 
@@ -177,8 +163,7 @@ namespace FIS_174867.Controllers
         {
             if (Session["UserName"] != null)
             {
-                User user = new User();
-                DataBaseEntities Context = new DataBaseEntities();
+                User user = new User();               
                 user = Context.Users.Find(id);
                 return View(user);
             }
@@ -193,7 +178,6 @@ namespace FIS_174867.Controllers
         {
             if (Session["UserName"] != null)
             {
-                DataBaseEntities Context = new DataBaseEntities();
                 var fu = Context.Users.Where(x => x.UsersID == id).FirstOrDefault();
                 if (fu.UserRole=="Faculty") {
                     var fac = Context.Faculties.Where(x => x.FacultyID == id).FirstOrDefault();
@@ -216,7 +200,7 @@ namespace FIS_174867.Controllers
         {
             if (Session["UserName"] != null)
             {
-                DataBaseEntities Context = new DataBaseEntities();
+                
                 return View(Context.Departments.ToList());
             }
             else
@@ -229,7 +213,7 @@ namespace FIS_174867.Controllers
         {
             if (Session["UserName"] != null)
             {
-                DataBaseEntities Context = new DataBaseEntities();
+                
                 var query = from p in Context.Departments.ToList()
                             where p.DeptName == div
                             select p;
@@ -258,10 +242,10 @@ namespace FIS_174867.Controllers
             {
                 try
                 {
-                    //DeptID, DeptName
+                  
                     if (ModelState.IsValid)
                     {
-                        DataBaseEntities Context = new DataBaseEntities();
+                        
                         Department department = new Department();
                         //department.DeptID = dept.DeptID;
                         department.DeptName = dept.DeptName;
@@ -292,7 +276,7 @@ namespace FIS_174867.Controllers
             if (Session["UserName"] != null)
             {
                 Department stud = new Department();
-                DataBaseEntities Context = new DataBaseEntities();
+               
                 stud = Context.Departments.Find(id);
                 return View(stud);
             }
@@ -306,7 +290,7 @@ namespace FIS_174867.Controllers
         {
             if (Session["UserName"] != null)
             {
-                DataBaseEntities Context = new DataBaseEntities();
+                
                 var d = Context.Departments.Where(x => x.DeptID == department.DeptID).FirstOrDefault();
                 d.DeptID = department.DeptID;
                 d.DeptName = department.DeptName;
@@ -330,7 +314,7 @@ namespace FIS_174867.Controllers
             if (Session["UserName"] != null)
             {
                 Department department = new Department();
-                DataBaseEntities Context = new DataBaseEntities();
+               
                 department = Context.Departments.Find(id);
                 return View(department);
             }
@@ -345,7 +329,7 @@ namespace FIS_174867.Controllers
         {
             if (Session["UserName"] != null)
             {
-                DataBaseEntities Context = new DataBaseEntities();
+                
                 var dep = Context.Departments.Where(x => x.DeptID == id).FirstOrDefault();
                 Context.Departments.Remove(dep);
                 Context.SaveChanges();
@@ -362,7 +346,7 @@ namespace FIS_174867.Controllers
         {
             if (Session["UserName"] != null)
             {
-                DataBaseEntities Context = new DataBaseEntities();
+                
                 return View(Context.Designations.ToList());
             }
             else
@@ -375,7 +359,7 @@ namespace FIS_174867.Controllers
         {
             if (Session["UserName"] != null)
             {
-                DataBaseEntities Context = new DataBaseEntities();
+               
                 var query = from p in Context.Designations.ToList()
                             where p.DesignationName == div
                             select p;
@@ -406,7 +390,7 @@ namespace FIS_174867.Controllers
                 {
                     if (ModelState.IsValid)
                     {
-                        DataBaseEntities Context = new DataBaseEntities();
+                        
                         Designation designation = new Designation();
                         //designation.DesignationID = des.DesignationID;
                         designation.DesignationName = des.DesignationName;
@@ -436,7 +420,7 @@ namespace FIS_174867.Controllers
             if (Session["UserName"] != null)
             {
                 Designation stud = new Designation();
-                DataBaseEntities Context = new DataBaseEntities();
+                
                 stud = Context.Designations.Find(id);
                 return View(stud);
             }
@@ -450,7 +434,7 @@ namespace FIS_174867.Controllers
         {
             if (Session["UserName"] != null)
             {
-                DataBaseEntities Context = new DataBaseEntities();
+                
                 var d = Context.Designations.Where(x => x.DesignationID == designation.DesignationID).FirstOrDefault();
                 d.DesignationID = designation.DesignationID;
                 d.DesignationName = designation.DesignationName;
@@ -473,7 +457,7 @@ namespace FIS_174867.Controllers
             if (Session["UserName"] != null)
             {
                 Designation designation = new Designation();
-                DataBaseEntities Context = new DataBaseEntities();
+               
                 designation = Context.Designations.Find(id);
                 return View(designation);
             }
@@ -488,7 +472,7 @@ namespace FIS_174867.Controllers
         {
             if (Session["UserName"] != null)
             {
-                DataBaseEntities Context = new DataBaseEntities();
+                
                 var dep = Context.Designations.Where(x => x.DesignationID == id).FirstOrDefault();
                 Context.Designations.Remove(dep);
                 Context.SaveChanges();
@@ -503,8 +487,7 @@ namespace FIS_174867.Controllers
         public ActionResult IndexFacultyinfo()
         {
             if (Session["UserName"] != null)
-            {
-                DataBaseEntities Context = new DataBaseEntities();
+            {   
                 return View(Context.Faculties.ToList());
             }
             else
@@ -517,7 +500,6 @@ namespace FIS_174867.Controllers
         {
             if (Session["UserName"] != null)
             {
-                DataBaseEntities Context = new DataBaseEntities();
                 var query1 = from p in Context.Faculties.ToList()
                              where p.FacultyID == div
                              select p;
@@ -533,7 +515,7 @@ namespace FIS_174867.Controllers
         {
             if (Session["UserName"] != null)
             {
-                DataBaseEntities Context = new DataBaseEntities();
+                
                 return View(Context.WorkHistories.ToList());
             }
             else
@@ -546,7 +528,7 @@ namespace FIS_174867.Controllers
         {
             if (Session["UserName"] != null)
             {
-                DataBaseEntities Context = new DataBaseEntities();
+                
                 var query1 = from p in Context.WorkHistories.ToList()
                              where p.FacultyID == div
                              select p;
@@ -562,7 +544,7 @@ namespace FIS_174867.Controllers
             if (Session["UserName"] != null)
             {
                 WorkHistory wh = new WorkHistory();
-                DataBaseEntities Context = new DataBaseEntities();
+                
                 wh = Context.WorkHistories.Find(id);
                 return View(wh);
             }
@@ -576,8 +558,7 @@ namespace FIS_174867.Controllers
         {
             if (Session["UserName"] != null)
             {
-                //WorkHistoryID, FacultyID, Organization, JobTitle, JobBeginDate, JobEndDate, JobResponsibilities, JobType
-                DataBaseEntities Context = new DataBaseEntities();
+                
                 var d = Context.WorkHistories.Where(x => x.WorkHistoryID == workhistory.WorkHistoryID).FirstOrDefault();
                 d.WorkHistoryID = workhistory.WorkHistoryID;
                 d.FacultyID = workhistory.FacultyID;
@@ -606,7 +587,7 @@ namespace FIS_174867.Controllers
         {
             if (Session["UserName"] != null)
             {
-                DataBaseEntities Context = new DataBaseEntities();
+               
                 return View(Context.Courses.ToList());
             }
             else
@@ -619,7 +600,7 @@ namespace FIS_174867.Controllers
         {
             if (Session["UserName"] != null)
             {
-                DataBaseEntities Context = new DataBaseEntities();
+               
                 var query = from p in Context.Courses.ToList()
                             where p.CourseName == div
                             select p;
@@ -662,8 +643,7 @@ namespace FIS_174867.Controllers
                 {
                     if (ModelState.IsValid)
                     {
-                        //CourseID, CourseName, CourseCredits, DeptID
-                        DataBaseEntities Context = new DataBaseEntities();
+                       
                         Cours cours = new Cours();
                        // cours.CourseID = course.CourseID;
                         cours.CourseName = course.CourseName;
@@ -698,7 +678,7 @@ namespace FIS_174867.Controllers
             if (Session["UserName"] != null)
             {
                 Cours c = new Cours();
-                DataBaseEntities Context = new DataBaseEntities();
+                
                 c = Context.Courses.Find(id);
                 return View(c);
             }
@@ -712,8 +692,7 @@ namespace FIS_174867.Controllers
         {
             if (Session["UserName"] != null)
             {
-                //CourseID, CourseName, CourseCredits, DeptID
-                DataBaseEntities Context = new DataBaseEntities();
+                
                 var c = Context.Courses.Where(x => x.CourseID == cours.CourseID).FirstOrDefault();
                 c.CourseID = cours.CourseID;
                 c.CourseName = cours.CourseName;
@@ -738,7 +717,7 @@ namespace FIS_174867.Controllers
             if (Session["UserName"] != null)
             {
                 Cours cours = new Cours();
-                DataBaseEntities Context = new DataBaseEntities();
+
                 cours = Context.Courses.Find(id);
                 return View(cours);
             }
@@ -753,7 +732,7 @@ namespace FIS_174867.Controllers
         {
             if (Session["UserName"] != null)
             {
-                DataBaseEntities Context = new DataBaseEntities();
+                
                 var cours = Context.Courses.Where(x => x.CourseID == id).FirstOrDefault();
                 Context.Courses.Remove(cours);
                 Context.SaveChanges();
@@ -770,7 +749,7 @@ namespace FIS_174867.Controllers
         {
             if (Session["UserName"] != null)
             {
-                DataBaseEntities Context = new DataBaseEntities();
+                
                 return View(Context.Subjects.ToList());
             }
             else
@@ -783,7 +762,7 @@ namespace FIS_174867.Controllers
         {
             if (Session["UserName"] != null)
             {
-                DataBaseEntities Context = new DataBaseEntities();
+              
                 var query = from p in Context.Subjects.ToList()
                             where p.SubjectName == div
                             select p;
@@ -814,8 +793,7 @@ namespace FIS_174867.Controllers
                 {
                     if (ModelState.IsValid)
                     {
-                        //SubjectID, SubjectName
-                        DataBaseEntities Context = new DataBaseEntities();
+                        
                         Subject sub = new Subject();
                        // sub.SubjectID = subject.SubjectID;
                         sub.SubjectName = subject.SubjectName;
@@ -845,7 +823,7 @@ namespace FIS_174867.Controllers
             if (Session["UserName"] != null)
             {
                 Subject s = new Subject();
-                DataBaseEntities Context = new DataBaseEntities();
+                
                 s = Context.Subjects.Find(id);
                 return View(s);
             }
@@ -859,7 +837,7 @@ namespace FIS_174867.Controllers
         {
             if (Session["UserName"] != null)
             {
-                DataBaseEntities Context = new DataBaseEntities();
+                
                 var s = Context.Subjects.Where(x => x.SubjectID == subject.SubjectID).FirstOrDefault();
                 s.SubjectID = subject.SubjectID;
                 s.SubjectName = subject.SubjectName;
@@ -883,7 +861,7 @@ namespace FIS_174867.Controllers
             if (Session["UserName"] != null)
             {
                 Subject subject = new Subject();
-                DataBaseEntities Context = new DataBaseEntities();
+                
                 subject = Context.Subjects.Find(id);
                 return View(subject);
             }
@@ -898,7 +876,7 @@ namespace FIS_174867.Controllers
         {
             if (Session["UserName"] != null)
             {
-                DataBaseEntities Context = new DataBaseEntities();
+                
                 var sub = Context.Subjects.Where(x => x.SubjectID == id).FirstOrDefault();
                 Context.Subjects.Remove(sub);
                 Context.SaveChanges();
