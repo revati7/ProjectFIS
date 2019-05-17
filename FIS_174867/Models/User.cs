@@ -20,9 +20,9 @@ namespace FIS_174867.Models
         public string UserName { get; set; }
         [Required]
         public string Password { get; set; }
-        
+
         public string UserRole { get; set; }
-    
+
         public virtual Faculty Faculty { get; set; }
     }
 }

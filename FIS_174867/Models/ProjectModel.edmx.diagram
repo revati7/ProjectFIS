@@ -4,32 +4,32 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="9b7b7ed9dde145e18a0df92154262fb3" Name="Diagram1" ZoomLevel="86">
-        <EntityTypeShape EntityType="ProjectModel.Cours" Width="1.5" PointX="5.375" PointY="3.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProjectModel.CoursesTaught" Width="1.5" PointX="7.25" PointY="3.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProjectModel.CourseSubject" Width="1.5" PointX="9" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProjectModel.Degree" Width="1.5" PointX="10.75" PointY="3.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProjectModel.Department" Width="1.5" PointX="0.875" PointY="8" IsExpanded="true" />
+      <Diagram DiagramId="842ef3afb1c34c8d877e9c3b3a77bef3" Name="Diagram1">
+        <EntityTypeShape EntityType="ProjectModel.Cours" Width="1.5" PointX="3" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectModel.CoursesTaught" Width="1.5" PointX="5.25" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectModel.CourseSubject" Width="1.5" PointX="5.25" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectModel.Degree" Width="1.5" PointX="5.25" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectModel.Department" Width="1.5" PointX="0.75" PointY="9.625" IsExpanded="true" />
         <EntityTypeShape EntityType="ProjectModel.Designation" Width="1.5" PointX="0.75" PointY="3.375" IsExpanded="true" />
         <EntityTypeShape EntityType="ProjectModel.Faculty" Width="1.5" PointX="3" PointY="3" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProjectModel.Grant" Width="1.5" PointX="10.625" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProjectModel.Publication" Width="1.5" PointX="9" PointY="7.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProjectModel.Subject" Width="1.5" PointX="4" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectModel.Grant" Width="1.5" PointX="5.25" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectModel.Publication" Width="1.5" PointX="5.25" PointY="18.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectModel.Subject" Width="1.5" PointX="3" PointY="12.625" IsExpanded="true" />
         <EntityTypeShape EntityType="ProjectModel.User" Width="1.5" PointX="0.75" PointY="5.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProjectModel.WorkHistory" Width="1.5" PointX="7.125" PointY="7.5" IsExpanded="true" />
-        <AssociationConnector Association="ProjectModel.FK__Courses__DeptID__671F4F74" ManuallyRouted="false" />
-        <AssociationConnector Association="ProjectModel.FK__CoursesTa__Cours__0B5CAFEA" ManuallyRouted="false" />
-        <AssociationConnector Association="ProjectModel.FK__CourseSub__Cours__7E02B4CC" ManuallyRouted="false" />
-        <AssociationConnector Association="ProjectModel.FK__CoursesTa__Facul__0C50D423" ManuallyRouted="false" />
-        <AssociationConnector Association="ProjectModel.FK__CoursesTa__Subje__0D44F85C" ManuallyRouted="false" />
-        <AssociationConnector Association="ProjectModel.FK__CourseSub__Subje__7EF6D905" ManuallyRouted="false" />
-        <AssociationConnector Association="ProjectModel.FK__Degrees__Faculty__10216507" ManuallyRouted="false" />
-        <AssociationConnector Association="ProjectModel.FK__Faculty__DeptID__078C1F06" ManuallyRouted="false" />
-        <AssociationConnector Association="ProjectModel.FK__Faculty__Designa__0880433F" ManuallyRouted="false" />
-        <AssociationConnector Association="ProjectModel.FK__Faculty__Faculty__0697FACD" ManuallyRouted="false" />
-        <AssociationConnector Association="ProjectModel.FK__Grants__FacultyI__1A9EF37A" ManuallyRouted="false" />
-        <AssociationConnector Association="ProjectModel.FK__Publicati__Facul__15DA3E5D" ManuallyRouted="false" />
-        <AssociationConnector Association="ProjectModel.FK__WorkHisto__Facul__12FDD1B2" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ProjectModel.WorkHistory" Width="1.5" PointX="5.25" PointY="21.75" IsExpanded="true" />
+        <AssociationConnector Association="ProjectModel.FK__Courses__DeptID__5FB337D6" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectModel.FK__CoursesTa__Cours__68487DD7" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectModel.FK__CourseSub__Cours__6477ECF3" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectModel.FK__CoursesTa__Facul__693CA210" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectModel.FK__CoursesTa__Subje__6A30C649" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectModel.FK__CourseSub__Subje__656C112C" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectModel.FK__Degrees__Faculty__59FA5E80" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectModel.FK__Faculty__DeptID__5070F446" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectModel.FK__Faculty__Designa__5165187F" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectModel.FK__Faculty__Faculty__4F7CD00D" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectModel.FK__Grants__FacultyI__5CD6CB2B" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectModel.FK__Publicati__Facul__5441852A" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectModel.FK__WorkHisto__Facul__571DF1D5" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ProjectModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="ProjectModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Courses">
           <Key>
             <PropertyRef Name="CourseID" />
@@ -123,7 +123,7 @@
           <Property Name="JobResponsibilities" Type="nvarchar" MaxLength="50" />
           <Property Name="JobType" Type="varchar" MaxLength="20" />
         </EntityType>
-        <Association Name="FK__Courses__DeptID__671F4F74">
+        <Association Name="FK__Courses__DeptID__5FB337D6">
           <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
           <End Role="Courses" Type="Self.Courses" Multiplicity="*" />
           <ReferentialConstraint>
@@ -135,7 +135,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CoursesTa__Cours__0B5CAFEA">
+        <Association Name="FK__CoursesTa__Cours__68487DD7">
           <End Role="Courses" Type="Self.Courses" Multiplicity="1" />
           <End Role="CoursesTaught" Type="Self.CoursesTaught" Multiplicity="0..1" />
           <ReferentialConstraint>
@@ -147,7 +147,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CoursesTa__Facul__0C50D423">
+        <Association Name="FK__CoursesTa__Facul__693CA210">
           <End Role="Faculty" Type="Self.Faculty" Multiplicity="0..1" />
           <End Role="CoursesTaught" Type="Self.CoursesTaught" Multiplicity="*" />
           <ReferentialConstraint>
@@ -159,7 +159,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CoursesTa__Subje__0D44F85C">
+        <Association Name="FK__CoursesTa__Subje__6A30C649">
           <End Role="Subjects" Type="Self.Subjects" Multiplicity="0..1" />
           <End Role="CoursesTaught" Type="Self.CoursesTaught" Multiplicity="*" />
           <ReferentialConstraint>
@@ -171,7 +171,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CourseSub__Cours__7E02B4CC">
+        <Association Name="FK__CourseSub__Cours__6477ECF3">
           <End Role="Courses" Type="Self.Courses" Multiplicity="1" />
           <End Role="CourseSubject" Type="Self.CourseSubject" Multiplicity="0..1" />
           <ReferentialConstraint>
@@ -183,7 +183,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CourseSub__Subje__7EF6D905">
+        <Association Name="FK__CourseSub__Subje__656C112C">
           <End Role="Subjects" Type="Self.Subjects" Multiplicity="0..1" />
           <End Role="CourseSubject" Type="Self.CourseSubject" Multiplicity="*" />
           <ReferentialConstraint>
@@ -195,7 +195,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Degrees__Faculty__10216507">
+        <Association Name="FK__Degrees__Faculty__59FA5E80">
           <End Role="Faculty" Type="Self.Faculty" Multiplicity="0..1" />
           <End Role="Degrees" Type="Self.Degrees" Multiplicity="*" />
           <ReferentialConstraint>
@@ -207,7 +207,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Faculty__DeptID__078C1F06">
+        <Association Name="FK__Faculty__DeptID__5070F446">
           <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
           <End Role="Faculty" Type="Self.Faculty" Multiplicity="*" />
           <ReferentialConstraint>
@@ -219,7 +219,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Faculty__Designa__0880433F">
+        <Association Name="FK__Faculty__Designa__5165187F">
           <End Role="Designation" Type="Self.Designation" Multiplicity="0..1" />
           <End Role="Faculty" Type="Self.Faculty" Multiplicity="*" />
           <ReferentialConstraint>
@@ -231,7 +231,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Faculty__Faculty__0697FACD">
+        <Association Name="FK__Faculty__Faculty__4F7CD00D">
           <End Role="Users" Type="Self.Users" Multiplicity="1" />
           <End Role="Faculty" Type="Self.Faculty" Multiplicity="0..1" />
           <ReferentialConstraint>
@@ -243,7 +243,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Grants__FacultyI__1A9EF37A">
+        <Association Name="FK__Grants__FacultyI__5CD6CB2B">
           <End Role="Faculty" Type="Self.Faculty" Multiplicity="0..1" />
           <End Role="Grants" Type="Self.Grants" Multiplicity="*" />
           <ReferentialConstraint>
@@ -255,7 +255,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Publicati__Facul__15DA3E5D">
+        <Association Name="FK__Publicati__Facul__5441852A">
           <End Role="Faculty" Type="Self.Faculty" Multiplicity="0..1" />
           <End Role="Publications" Type="Self.Publications" Multiplicity="*" />
           <ReferentialConstraint>
@@ -267,7 +267,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__WorkHisto__Facul__12FDD1B2">
+        <Association Name="FK__WorkHisto__Facul__571DF1D5">
           <End Role="Faculty" Type="Self.Faculty" Multiplicity="0..1" />
           <End Role="WorkHistory" Type="Self.WorkHistory" Multiplicity="*" />
           <ReferentialConstraint>
@@ -292,55 +292,55 @@
           <EntitySet Name="Subjects" EntityType="Self.Subjects" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WorkHistory" EntityType="Self.WorkHistory" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Courses__DeptID__671F4F74" Association="Self.FK__Courses__DeptID__671F4F74">
+          <AssociationSet Name="FK__Courses__DeptID__5FB337D6" Association="Self.FK__Courses__DeptID__5FB337D6">
             <End Role="Department" EntitySet="Department" />
             <End Role="Courses" EntitySet="Courses" />
           </AssociationSet>
-          <AssociationSet Name="FK__CoursesTa__Cours__0B5CAFEA" Association="Self.FK__CoursesTa__Cours__0B5CAFEA">
+          <AssociationSet Name="FK__CoursesTa__Cours__68487DD7" Association="Self.FK__CoursesTa__Cours__68487DD7">
             <End Role="Courses" EntitySet="Courses" />
             <End Role="CoursesTaught" EntitySet="CoursesTaught" />
           </AssociationSet>
-          <AssociationSet Name="FK__CoursesTa__Facul__0C50D423" Association="Self.FK__CoursesTa__Facul__0C50D423">
+          <AssociationSet Name="FK__CoursesTa__Facul__693CA210" Association="Self.FK__CoursesTa__Facul__693CA210">
             <End Role="Faculty" EntitySet="Faculty" />
             <End Role="CoursesTaught" EntitySet="CoursesTaught" />
           </AssociationSet>
-          <AssociationSet Name="FK__CoursesTa__Subje__0D44F85C" Association="Self.FK__CoursesTa__Subje__0D44F85C">
+          <AssociationSet Name="FK__CoursesTa__Subje__6A30C649" Association="Self.FK__CoursesTa__Subje__6A30C649">
             <End Role="Subjects" EntitySet="Subjects" />
             <End Role="CoursesTaught" EntitySet="CoursesTaught" />
           </AssociationSet>
-          <AssociationSet Name="FK__CourseSub__Cours__7E02B4CC" Association="Self.FK__CourseSub__Cours__7E02B4CC">
+          <AssociationSet Name="FK__CourseSub__Cours__6477ECF3" Association="Self.FK__CourseSub__Cours__6477ECF3">
             <End Role="Courses" EntitySet="Courses" />
             <End Role="CourseSubject" EntitySet="CourseSubject" />
           </AssociationSet>
-          <AssociationSet Name="FK__CourseSub__Subje__7EF6D905" Association="Self.FK__CourseSub__Subje__7EF6D905">
+          <AssociationSet Name="FK__CourseSub__Subje__656C112C" Association="Self.FK__CourseSub__Subje__656C112C">
             <End Role="Subjects" EntitySet="Subjects" />
             <End Role="CourseSubject" EntitySet="CourseSubject" />
           </AssociationSet>
-          <AssociationSet Name="FK__Degrees__Faculty__10216507" Association="Self.FK__Degrees__Faculty__10216507">
+          <AssociationSet Name="FK__Degrees__Faculty__59FA5E80" Association="Self.FK__Degrees__Faculty__59FA5E80">
             <End Role="Faculty" EntitySet="Faculty" />
             <End Role="Degrees" EntitySet="Degrees" />
           </AssociationSet>
-          <AssociationSet Name="FK__Faculty__DeptID__078C1F06" Association="Self.FK__Faculty__DeptID__078C1F06">
+          <AssociationSet Name="FK__Faculty__DeptID__5070F446" Association="Self.FK__Faculty__DeptID__5070F446">
             <End Role="Department" EntitySet="Department" />
             <End Role="Faculty" EntitySet="Faculty" />
           </AssociationSet>
-          <AssociationSet Name="FK__Faculty__Designa__0880433F" Association="Self.FK__Faculty__Designa__0880433F">
+          <AssociationSet Name="FK__Faculty__Designa__5165187F" Association="Self.FK__Faculty__Designa__5165187F">
             <End Role="Designation" EntitySet="Designation" />
             <End Role="Faculty" EntitySet="Faculty" />
           </AssociationSet>
-          <AssociationSet Name="FK__Faculty__Faculty__0697FACD" Association="Self.FK__Faculty__Faculty__0697FACD">
+          <AssociationSet Name="FK__Faculty__Faculty__4F7CD00D" Association="Self.FK__Faculty__Faculty__4F7CD00D">
             <End Role="Users" EntitySet="Users" />
             <End Role="Faculty" EntitySet="Faculty" />
           </AssociationSet>
-          <AssociationSet Name="FK__Grants__FacultyI__1A9EF37A" Association="Self.FK__Grants__FacultyI__1A9EF37A">
+          <AssociationSet Name="FK__Grants__FacultyI__5CD6CB2B" Association="Self.FK__Grants__FacultyI__5CD6CB2B">
             <End Role="Faculty" EntitySet="Faculty" />
             <End Role="Grants" EntitySet="Grants" />
           </AssociationSet>
-          <AssociationSet Name="FK__Publicati__Facul__15DA3E5D" Association="Self.FK__Publicati__Facul__15DA3E5D">
+          <AssociationSet Name="FK__Publicati__Facul__5441852A" Association="Self.FK__Publicati__Facul__5441852A">
             <End Role="Faculty" EntitySet="Faculty" />
             <End Role="Publications" EntitySet="Publications" />
           </AssociationSet>
-          <AssociationSet Name="FK__WorkHisto__Facul__12FDD1B2" Association="Self.FK__WorkHisto__Facul__12FDD1B2">
+          <AssociationSet Name="FK__WorkHisto__Facul__571DF1D5" Association="Self.FK__WorkHisto__Facul__571DF1D5">
             <End Role="Faculty" EntitySet="Faculty" />
             <End Role="WorkHistory" EntitySet="WorkHistory" />
           </AssociationSet>
@@ -358,9 +358,9 @@
           <Property Name="CourseName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="CourseCredits" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="DeptID" Type="Int32" />
-          <NavigationProperty Name="Department" Relationship="Self.FK__Courses__DeptID__671F4F74" FromRole="Courses" ToRole="Department" />
-          <NavigationProperty Name="CoursesTaught" Relationship="Self.FK__CoursesTa__Cours__0B5CAFEA" FromRole="Courses" ToRole="CoursesTaught" />
-          <NavigationProperty Name="CourseSubject" Relationship="Self.FK__CourseSub__Cours__7E02B4CC" FromRole="Courses" ToRole="CourseSubject" />
+          <NavigationProperty Name="Department" Relationship="Self.FK__Courses__DeptID__5FB337D6" FromRole="Courses" ToRole="Department" />
+          <NavigationProperty Name="CoursesTaught" Relationship="Self.FK__CoursesTa__Cours__68487DD7" FromRole="Courses" ToRole="CoursesTaught" />
+          <NavigationProperty Name="CourseSubject" Relationship="Self.FK__CourseSub__Cours__6477ECF3" FromRole="Courses" ToRole="CourseSubject" />
         </EntityType>
         <EntityType Name="CoursesTaught">
           <Key>
@@ -370,9 +370,9 @@
           <Property Name="FacultyID" Type="Int32" />
           <Property Name="SubjectID" Type="Int32" />
           <Property Name="FirstDateTaught" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="Cours" Relationship="Self.FK__CoursesTa__Cours__0B5CAFEA" FromRole="CoursesTaught" ToRole="Courses" />
-          <NavigationProperty Name="Faculty" Relationship="Self.FK__CoursesTa__Facul__0C50D423" FromRole="CoursesTaught" ToRole="Faculty" />
-          <NavigationProperty Name="Subject" Relationship="Self.FK__CoursesTa__Subje__0D44F85C" FromRole="CoursesTaught" ToRole="Subjects" />
+          <NavigationProperty Name="Cours" Relationship="Self.FK__CoursesTa__Cours__68487DD7" FromRole="CoursesTaught" ToRole="Courses" />
+          <NavigationProperty Name="Faculty" Relationship="Self.FK__CoursesTa__Facul__693CA210" FromRole="CoursesTaught" ToRole="Faculty" />
+          <NavigationProperty Name="Subject" Relationship="Self.FK__CoursesTa__Subje__6A30C649" FromRole="CoursesTaught" ToRole="Subjects" />
         </EntityType>
         <EntityType Name="CourseSubject">
           <Key>
@@ -380,8 +380,8 @@
           </Key>
           <Property Name="CourseID" Type="Int32" Nullable="false" />
           <Property Name="SubjectID" Type="Int32" />
-          <NavigationProperty Name="Cours" Relationship="Self.FK__CourseSub__Cours__7E02B4CC" FromRole="CourseSubject" ToRole="Courses" />
-          <NavigationProperty Name="Subject" Relationship="Self.FK__CourseSub__Subje__7EF6D905" FromRole="CourseSubject" ToRole="Subjects" />
+          <NavigationProperty Name="Cours" Relationship="Self.FK__CourseSub__Cours__6477ECF3" FromRole="CourseSubject" ToRole="Courses" />
+          <NavigationProperty Name="Subject" Relationship="Self.FK__CourseSub__Subje__656C112C" FromRole="CourseSubject" ToRole="Subjects" />
         </EntityType>
         <EntityType Name="Degree">
           <Key>
@@ -393,7 +393,7 @@
           <Property Name="Specialization" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="DegreeYear" Type="DateTime" Precision="3" />
           <Property Name="Grade" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Faculty" Relationship="Self.FK__Degrees__Faculty__10216507" FromRole="Degrees" ToRole="Faculty" />
+          <NavigationProperty Name="Faculty" Relationship="Self.FK__Degrees__Faculty__59FA5E80" FromRole="Degrees" ToRole="Faculty" />
         </EntityType>
         <EntityType Name="Department">
           <Key>
@@ -401,8 +401,8 @@
           </Key>
           <Property Name="DeptID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="DeptName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Courses" Relationship="Self.FK__Courses__DeptID__671F4F74" FromRole="Department" ToRole="Courses" />
-          <NavigationProperty Name="Faculties" Relationship="Self.FK__Faculty__DeptID__078C1F06" FromRole="Department" ToRole="Faculty" />
+          <NavigationProperty Name="Courses" Relationship="Self.FK__Courses__DeptID__5FB337D6" FromRole="Department" ToRole="Courses" />
+          <NavigationProperty Name="Faculties" Relationship="Self.FK__Faculty__DeptID__5070F446" FromRole="Department" ToRole="Faculty" />
         </EntityType>
         <EntityType Name="Designation">
           <Key>
@@ -410,7 +410,7 @@
           </Key>
           <Property Name="DesignationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="DesignationName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Faculties" Relationship="Self.FK__Faculty__Designa__0880433F" FromRole="Designation" ToRole="Faculty" />
+          <NavigationProperty Name="Faculties" Relationship="Self.FK__Faculty__Designa__5165187F" FromRole="Designation" ToRole="Faculty" />
         </EntityType>
         <EntityType Name="Faculty">
           <Key>
@@ -429,14 +429,14 @@
           <Property Name="DateofBirth" Type="DateTime" Precision="3" />
           <Property Name="DeptID" Type="Int32" />
           <Property Name="DesignationID" Type="Int32" />
-          <NavigationProperty Name="CoursesTaughts" Relationship="Self.FK__CoursesTa__Facul__0C50D423" FromRole="Faculty" ToRole="CoursesTaught" />
-          <NavigationProperty Name="Degrees" Relationship="Self.FK__Degrees__Faculty__10216507" FromRole="Faculty" ToRole="Degrees" />
-          <NavigationProperty Name="Department" Relationship="Self.FK__Faculty__DeptID__078C1F06" FromRole="Faculty" ToRole="Department" />
-          <NavigationProperty Name="Designation" Relationship="Self.FK__Faculty__Designa__0880433F" FromRole="Faculty" ToRole="Designation" />
-          <NavigationProperty Name="User" Relationship="Self.FK__Faculty__Faculty__0697FACD" FromRole="Faculty" ToRole="Users" />
-          <NavigationProperty Name="Grants" Relationship="Self.FK__Grants__FacultyI__1A9EF37A" FromRole="Faculty" ToRole="Grants" />
-          <NavigationProperty Name="Publications" Relationship="Self.FK__Publicati__Facul__15DA3E5D" FromRole="Faculty" ToRole="Publications" />
-          <NavigationProperty Name="WorkHistories" Relationship="Self.FK__WorkHisto__Facul__12FDD1B2" FromRole="Faculty" ToRole="WorkHistory" />
+          <NavigationProperty Name="CoursesTaughts" Relationship="Self.FK__CoursesTa__Facul__693CA210" FromRole="Faculty" ToRole="CoursesTaught" />
+          <NavigationProperty Name="Degrees" Relationship="Self.FK__Degrees__Faculty__59FA5E80" FromRole="Faculty" ToRole="Degrees" />
+          <NavigationProperty Name="Department" Relationship="Self.FK__Faculty__DeptID__5070F446" FromRole="Faculty" ToRole="Department" />
+          <NavigationProperty Name="Designation" Relationship="Self.FK__Faculty__Designa__5165187F" FromRole="Faculty" ToRole="Designation" />
+          <NavigationProperty Name="User" Relationship="Self.FK__Faculty__Faculty__4F7CD00D" FromRole="Faculty" ToRole="Users" />
+          <NavigationProperty Name="Grants" Relationship="Self.FK__Grants__FacultyI__5CD6CB2B" FromRole="Faculty" ToRole="Grants" />
+          <NavigationProperty Name="Publications" Relationship="Self.FK__Publicati__Facul__5441852A" FromRole="Faculty" ToRole="Publications" />
+          <NavigationProperty Name="WorkHistories" Relationship="Self.FK__WorkHisto__Facul__571DF1D5" FromRole="Faculty" ToRole="WorkHistory" />
         </EntityType>
         <EntityType Name="Grant">
           <Key>
@@ -446,7 +446,7 @@
           <Property Name="FacultyID" Type="Int32" />
           <Property Name="GrantTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="GrantDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Faculty" Relationship="Self.FK__Grants__FacultyI__1A9EF37A" FromRole="Grants" ToRole="Faculty" />
+          <NavigationProperty Name="Faculty" Relationship="Self.FK__Grants__FacultyI__5CD6CB2B" FromRole="Grants" ToRole="Faculty" />
         </EntityType>
         <EntityType Name="Publication">
           <Key>
@@ -459,7 +459,7 @@
           <Property Name="PublisherName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="PublicationLocation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="CitationDate" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="Faculty" Relationship="Self.FK__Publicati__Facul__15DA3E5D" FromRole="Publications" ToRole="Faculty" />
+          <NavigationProperty Name="Faculty" Relationship="Self.FK__Publicati__Facul__5441852A" FromRole="Publications" ToRole="Faculty" />
         </EntityType>
         <EntityType Name="Subject">
           <Key>
@@ -467,8 +467,8 @@
           </Key>
           <Property Name="SubjectID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="SubjectName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="CoursesTaughts" Relationship="Self.FK__CoursesTa__Subje__0D44F85C" FromRole="Subjects" ToRole="CoursesTaught" />
-          <NavigationProperty Name="CourseSubjects" Relationship="Self.FK__CourseSub__Subje__7EF6D905" FromRole="Subjects" ToRole="CourseSubject" />
+          <NavigationProperty Name="CoursesTaughts" Relationship="Self.FK__CoursesTa__Subje__6A30C649" FromRole="Subjects" ToRole="CoursesTaught" />
+          <NavigationProperty Name="CourseSubjects" Relationship="Self.FK__CourseSub__Subje__656C112C" FromRole="Subjects" ToRole="CourseSubject" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -478,7 +478,7 @@
           <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="UserRole" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Faculty" Relationship="Self.FK__Faculty__Faculty__0697FACD" FromRole="Users" ToRole="Faculty" />
+          <NavigationProperty Name="Faculty" Relationship="Self.FK__Faculty__Faculty__4F7CD00D" FromRole="Users" ToRole="Faculty" />
         </EntityType>
         <EntityType Name="WorkHistory">
           <Key>
@@ -492,9 +492,9 @@
           <Property Name="JobEndDate" Type="DateTime" Precision="3" />
           <Property Name="JobResponsibilities" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="JobType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Faculty" Relationship="Self.FK__WorkHisto__Facul__12FDD1B2" FromRole="WorkHistory" ToRole="Faculty" />
+          <NavigationProperty Name="Faculty" Relationship="Self.FK__WorkHisto__Facul__571DF1D5" FromRole="WorkHistory" ToRole="Faculty" />
         </EntityType>
-        <Association Name="FK__Courses__DeptID__671F4F74">
+        <Association Name="FK__Courses__DeptID__5FB337D6">
           <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
           <End Role="Courses" Type="Self.Cours" Multiplicity="*" />
           <ReferentialConstraint>
@@ -506,7 +506,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CoursesTa__Cours__0B5CAFEA">
+        <Association Name="FK__CoursesTa__Cours__68487DD7">
           <End Role="Courses" Type="Self.Cours" Multiplicity="1" />
           <End Role="CoursesTaught" Type="Self.CoursesTaught" Multiplicity="0..1" />
           <ReferentialConstraint>
@@ -518,7 +518,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CourseSub__Cours__7E02B4CC">
+        <Association Name="FK__CourseSub__Cours__6477ECF3">
           <End Role="Courses" Type="Self.Cours" Multiplicity="1" />
           <End Role="CourseSubject" Type="Self.CourseSubject" Multiplicity="0..1" />
           <ReferentialConstraint>
@@ -530,7 +530,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CoursesTa__Facul__0C50D423">
+        <Association Name="FK__CoursesTa__Facul__693CA210">
           <End Role="Faculty" Type="Self.Faculty" Multiplicity="0..1" />
           <End Role="CoursesTaught" Type="Self.CoursesTaught" Multiplicity="*" />
           <ReferentialConstraint>
@@ -542,7 +542,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CoursesTa__Subje__0D44F85C">
+        <Association Name="FK__CoursesTa__Subje__6A30C649">
           <End Role="Subjects" Type="Self.Subject" Multiplicity="0..1" />
           <End Role="CoursesTaught" Type="Self.CoursesTaught" Multiplicity="*" />
           <ReferentialConstraint>
@@ -554,7 +554,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CourseSub__Subje__7EF6D905">
+        <Association Name="FK__CourseSub__Subje__656C112C">
           <End Role="Subjects" Type="Self.Subject" Multiplicity="0..1" />
           <End Role="CourseSubject" Type="Self.CourseSubject" Multiplicity="*" />
           <ReferentialConstraint>
@@ -566,7 +566,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Degrees__Faculty__10216507">
+        <Association Name="FK__Degrees__Faculty__59FA5E80">
           <End Role="Faculty" Type="Self.Faculty" Multiplicity="0..1" />
           <End Role="Degrees" Type="Self.Degree" Multiplicity="*" />
           <ReferentialConstraint>
@@ -578,7 +578,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Faculty__DeptID__078C1F06">
+        <Association Name="FK__Faculty__DeptID__5070F446">
           <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
           <End Role="Faculty" Type="Self.Faculty" Multiplicity="*" />
           <ReferentialConstraint>
@@ -590,7 +590,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Faculty__Designa__0880433F">
+        <Association Name="FK__Faculty__Designa__5165187F">
           <End Role="Designation" Type="Self.Designation" Multiplicity="0..1" />
           <End Role="Faculty" Type="Self.Faculty" Multiplicity="*" />
           <ReferentialConstraint>
@@ -602,7 +602,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Faculty__Faculty__0697FACD">
+        <Association Name="FK__Faculty__Faculty__4F7CD00D">
           <End Role="Users" Type="Self.User" Multiplicity="1" />
           <End Role="Faculty" Type="Self.Faculty" Multiplicity="0..1" />
           <ReferentialConstraint>
@@ -614,7 +614,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Grants__FacultyI__1A9EF37A">
+        <Association Name="FK__Grants__FacultyI__5CD6CB2B">
           <End Role="Faculty" Type="Self.Faculty" Multiplicity="0..1" />
           <End Role="Grants" Type="Self.Grant" Multiplicity="*" />
           <ReferentialConstraint>
@@ -626,7 +626,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Publicati__Facul__15DA3E5D">
+        <Association Name="FK__Publicati__Facul__5441852A">
           <End Role="Faculty" Type="Self.Faculty" Multiplicity="0..1" />
           <End Role="Publications" Type="Self.Publication" Multiplicity="*" />
           <ReferentialConstraint>
@@ -638,7 +638,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__WorkHisto__Facul__12FDD1B2">
+        <Association Name="FK__WorkHisto__Facul__571DF1D5">
           <End Role="Faculty" Type="Self.Faculty" Multiplicity="0..1" />
           <End Role="WorkHistory" Type="Self.WorkHistory" Multiplicity="*" />
           <ReferentialConstraint>
@@ -663,55 +663,55 @@
           <EntitySet Name="Subjects" EntityType="Self.Subject" />
           <EntitySet Name="Users" EntityType="Self.User" />
           <EntitySet Name="WorkHistories" EntityType="Self.WorkHistory" />
-          <AssociationSet Name="FK__Courses__DeptID__671F4F74" Association="Self.FK__Courses__DeptID__671F4F74">
+          <AssociationSet Name="FK__Courses__DeptID__5FB337D6" Association="Self.FK__Courses__DeptID__5FB337D6">
             <End Role="Department" EntitySet="Departments" />
             <End Role="Courses" EntitySet="Courses" />
           </AssociationSet>
-          <AssociationSet Name="FK__CoursesTa__Cours__0B5CAFEA" Association="Self.FK__CoursesTa__Cours__0B5CAFEA">
+          <AssociationSet Name="FK__CoursesTa__Cours__68487DD7" Association="Self.FK__CoursesTa__Cours__68487DD7">
             <End Role="Courses" EntitySet="Courses" />
             <End Role="CoursesTaught" EntitySet="CoursesTaughts" />
           </AssociationSet>
-          <AssociationSet Name="FK__CourseSub__Cours__7E02B4CC" Association="Self.FK__CourseSub__Cours__7E02B4CC">
+          <AssociationSet Name="FK__CourseSub__Cours__6477ECF3" Association="Self.FK__CourseSub__Cours__6477ECF3">
             <End Role="Courses" EntitySet="Courses" />
             <End Role="CourseSubject" EntitySet="CourseSubjects" />
           </AssociationSet>
-          <AssociationSet Name="FK__CoursesTa__Facul__0C50D423" Association="Self.FK__CoursesTa__Facul__0C50D423">
+          <AssociationSet Name="FK__CoursesTa__Facul__693CA210" Association="Self.FK__CoursesTa__Facul__693CA210">
             <End Role="Faculty" EntitySet="Faculties" />
             <End Role="CoursesTaught" EntitySet="CoursesTaughts" />
           </AssociationSet>
-          <AssociationSet Name="FK__CoursesTa__Subje__0D44F85C" Association="Self.FK__CoursesTa__Subje__0D44F85C">
+          <AssociationSet Name="FK__CoursesTa__Subje__6A30C649" Association="Self.FK__CoursesTa__Subje__6A30C649">
             <End Role="Subjects" EntitySet="Subjects" />
             <End Role="CoursesTaught" EntitySet="CoursesTaughts" />
           </AssociationSet>
-          <AssociationSet Name="FK__CourseSub__Subje__7EF6D905" Association="Self.FK__CourseSub__Subje__7EF6D905">
+          <AssociationSet Name="FK__CourseSub__Subje__656C112C" Association="Self.FK__CourseSub__Subje__656C112C">
             <End Role="Subjects" EntitySet="Subjects" />
             <End Role="CourseSubject" EntitySet="CourseSubjects" />
           </AssociationSet>
-          <AssociationSet Name="FK__Degrees__Faculty__10216507" Association="Self.FK__Degrees__Faculty__10216507">
+          <AssociationSet Name="FK__Degrees__Faculty__59FA5E80" Association="Self.FK__Degrees__Faculty__59FA5E80">
             <End Role="Faculty" EntitySet="Faculties" />
             <End Role="Degrees" EntitySet="Degrees" />
           </AssociationSet>
-          <AssociationSet Name="FK__Faculty__DeptID__078C1F06" Association="Self.FK__Faculty__DeptID__078C1F06">
+          <AssociationSet Name="FK__Faculty__DeptID__5070F446" Association="Self.FK__Faculty__DeptID__5070F446">
             <End Role="Department" EntitySet="Departments" />
             <End Role="Faculty" EntitySet="Faculties" />
           </AssociationSet>
-          <AssociationSet Name="FK__Faculty__Designa__0880433F" Association="Self.FK__Faculty__Designa__0880433F">
+          <AssociationSet Name="FK__Faculty__Designa__5165187F" Association="Self.FK__Faculty__Designa__5165187F">
             <End Role="Designation" EntitySet="Designations" />
             <End Role="Faculty" EntitySet="Faculties" />
           </AssociationSet>
-          <AssociationSet Name="FK__Faculty__Faculty__0697FACD" Association="Self.FK__Faculty__Faculty__0697FACD">
+          <AssociationSet Name="FK__Faculty__Faculty__4F7CD00D" Association="Self.FK__Faculty__Faculty__4F7CD00D">
             <End Role="Users" EntitySet="Users" />
             <End Role="Faculty" EntitySet="Faculties" />
           </AssociationSet>
-          <AssociationSet Name="FK__Grants__FacultyI__1A9EF37A" Association="Self.FK__Grants__FacultyI__1A9EF37A">
+          <AssociationSet Name="FK__Grants__FacultyI__5CD6CB2B" Association="Self.FK__Grants__FacultyI__5CD6CB2B">
             <End Role="Faculty" EntitySet="Faculties" />
             <End Role="Grants" EntitySet="Grants" />
           </AssociationSet>
-          <AssociationSet Name="FK__Publicati__Facul__15DA3E5D" Association="Self.FK__Publicati__Facul__15DA3E5D">
+          <AssociationSet Name="FK__Publicati__Facul__5441852A" Association="Self.FK__Publicati__Facul__5441852A">
             <End Role="Faculty" EntitySet="Faculties" />
             <End Role="Publications" EntitySet="Publications" />
           </AssociationSet>
-          <AssociationSet Name="FK__WorkHisto__Facul__12FDD1B2" Association="Self.FK__WorkHisto__Facul__12FDD1B2">
+          <AssociationSet Name="FK__WorkHisto__Facul__571DF1D5" Association="Self.FK__WorkHisto__Facul__571DF1D5">
             <End Role="Faculty" EntitySet="Faculties" />
             <End Role="WorkHistory" EntitySet="WorkHistories" />
           </AssociationSet>

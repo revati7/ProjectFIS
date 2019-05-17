@@ -24,7 +24,7 @@
         </div>*@
 
         <div class="form-group">
-            @Html.LabelFor(model => model.FacultyID, "FacultyID", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.FacultyID, "Faculty ID", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <h4><b>@Session["UserID"]</b></h4>
                 @*@Html.EditorFor(model => model.FacultyID, new { htmlAttributes = new { @class = "form-control" } })*@
@@ -34,7 +34,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.GrantTitle, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.GrantTitle, "Grant Title", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.GrantTitle, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.GrantTitle, "", new { @class = "text-danger" })
@@ -42,7 +42,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.GrantDescription, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.GrantDescription, "Grant Description", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.GrantDescription, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.GrantDescription, "", new { @class = "text-danger" })

@@ -15,14 +15,14 @@ namespace FIS_174867.Models
 
     public partial class CoursesTaught
     {
-        [Required]
+        [Required(ErrorMessage ="The Course Name field is required.")]
         public int CourseID { get; set; }
         public Nullable<int> FacultyID { get; set; }
-        [Required]
+        [Required(ErrorMessage = "The Subject Name field is required.")]
         public Nullable<int> SubjectID { get; set; }
         [Required]
         public Nullable<System.DateTime> FirstDateTaught { get; set; }
-    
+
         public virtual Cours Cours { get; set; }
         public virtual Faculty Faculty { get; set; }
         public virtual Subject Subject { get; set; }

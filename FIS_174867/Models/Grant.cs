@@ -21,7 +21,7 @@ namespace FIS_174867.Models
         public string GrantTitle { get; set; }
         [Required]
         public string GrantDescription { get; set; }
-    
+
         public virtual Faculty Faculty { get; set; }
     }
 }

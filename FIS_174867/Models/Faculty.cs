@@ -24,7 +24,7 @@ namespace FIS_174867.Models
             this.Publications = new HashSet<Publication>();
             this.WorkHistories = new HashSet<WorkHistory>();
         }
-    
+
         public int FacultyID { get; set; }
         [Required]
         public string FirstName { get; set; }
@@ -48,7 +48,7 @@ namespace FIS_174867.Models
         public Nullable<System.DateTime> DateofBirth { get; set; }
         public Nullable<int> DeptID { get; set; }
         public Nullable<int> DesignationID { get; set; }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CoursesTaught> CoursesTaughts { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

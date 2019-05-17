@@ -20,10 +20,12 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.SubjectID)
+            @*@Html.DisplayNameFor(model => model.SubjectID)*@
+            Subject ID
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.SubjectName)
+            @*@Html.DisplayNameFor(model => model.SubjectName)*@
+            Subject Name
         </th>
     </tr>
 
@@ -37,7 +39,7 @@
             @Html.DisplayFor(modelItem => item.SubjectName)
         </td>
         <td>
-            @Html.ActionLink("Edit", "EditSubject", new { id = item.SubjectID }) 
+            @Html.ActionLink("Edit", "EditSubject", new { id = item.SubjectID }) |
             @*@Html.ActionLink("Details", "Details", new { id=item.SubjectID }) |*@
             @Html.ActionLink("Delete", "DeleteSubject", new { id = item.SubjectID })
         </td>

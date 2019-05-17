@@ -21,11 +21,11 @@ namespace FIS_174867.Models
             this.Courses = new HashSet<Cours>();
             this.Faculties = new HashSet<Faculty>();
         }
-    
+
         public int DeptID { get; set; }
         [Required]
         public string DeptName { get; set; }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Cours> Courses { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

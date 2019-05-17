@@ -20,11 +20,11 @@ namespace FIS_174867.Models
         {
             this.Faculties = new HashSet<Faculty>();
         }
-    
+
         public int DesignationID { get; set; }
         [Required]
         public string DesignationName { get; set; }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Faculty> Faculties { get; set; }
     }
